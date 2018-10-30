@@ -26,3 +26,33 @@ C:\Users\walmart\Documents\Visual Studio 2015\Projects\Cynomex.cynomys.webservic
 C:\Users\walmart\Documents\Visual Studio 2015\Projects\Cynomex.cynomys.webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.csprojResolveAssemblyReference.cache
 C:\Users\walmart\Documents\Visual Studio 2015\Projects\Cynomex.cynomys.webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.dll
 C:\Users\walmart\Documents\Visual Studio 2015\Projects\Cynomex.cynomys.webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.pdb
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\csc.exe
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\vbc.exe
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\VBCSCompiler.exe
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Cynomex.cynomys.webservice.dll.config
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Cynomex.cynomys.webservice.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Cynomex.cynomys.webservice.pdb
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Newtonsoft.Json.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\System.Net.Http.Formatting.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\System.Web.Http.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\System.Web.Http.WebHost.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\Newtonsoft.Json.xml
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\System.Net.Http.Formatting.xml
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\System.Web.Http.xml
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\bin\System.Web.Http.WebHost.xml
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.csprojAssemblyReference.cache
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.csproj.CoreCompileInputs.cache
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.csproj.CopyComplete
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.dll
+C:\Users\jessi\Source\Repos\Cynomis-Webservice\Cynomex.cynomys.webservice\obj\Debug\Cynomex.cynomys.webservice.pdb
