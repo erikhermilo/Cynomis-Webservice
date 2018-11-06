@@ -87,7 +87,7 @@ namespace Cynomex.cynomys.webservice
                 usu.fecha_nacimiento = fechaN;
                 usu.idsexo = sexo;
                 usu.nombre = nombre;
-                usu.email = email;
+                usu.email = email.ToLower();
                 usu.status = true;
 
                 dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().InsertOnSubmit(usu);
@@ -99,6 +99,23 @@ namespace Cynomex.cynomys.webservice
             {
                 return false;
             }
+        }
+
+        [WebMethod]
+        public Usuario LoginUser(String Email, String Contraseña)
+        {
+            try
+            {
+                Usuario Usuarios = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().Where(c => (c.email.Equals(Email.ToLower())) & (c.password.Equals(Contraseña))).First();
+
+
+                return Usuarios;
+
+            }catch
+            {
+                return null;
+            }
+
         }
     }
 }
