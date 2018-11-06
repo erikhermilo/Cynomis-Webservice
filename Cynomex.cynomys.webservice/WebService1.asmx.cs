@@ -106,12 +106,12 @@ namespace Cynomex.cynomys.webservice
         {
             try
             {
-                Usuario Usuarios = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().Where(c => (c.email.Equals(Email.ToLower())) & (c.password.Equals(Contraseña))).First();
+                Usuario Usuario = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().Where(c => (c.email.Equals(Email.ToLower())) & (c.password.Equals(Contraseña))).First();
 
 
-                return Usuarios;
+                return Usuario;
 
-            }catch
+            }catch(Exception ex)
             {
                 return null;
             }
