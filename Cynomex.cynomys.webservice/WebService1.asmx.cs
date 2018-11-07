@@ -24,29 +24,24 @@ namespace Cynomex.cynomys.webservice
         DataContext dcTemp = new DataClasses1DataContext();
 
         [WebMethod]
-        public Usuario[] GetAllUsuarios()
+        public Entidades.Usuarios[] GetAllUsuarios()
         {
             try
             {
                 List<Usuario> Listausuarios = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().ToList();
-                Usuario[] tempUS = new Usuario[Listausuarios.Count()];
+                Entidades.Usuarios[] tempUS = new Entidades.Usuarios[Listausuarios.Count()];
                 for (int i = 0; i < Listausuarios.Count(); i++)
                 {
                     //asignamos el objeto persona uno por uno
-                    Usuario temp = new Usuario();
-                    temp.idUsuario = Listausuarios[i].idUsuario;
-                    temp.usuario1 = Listausuarios[i].usuario1;
-                    temp.password = Listausuarios[i].password;
-                    temp.fecha_nacimiento = Listausuarios[i].fecha_nacimiento;
-                    temp.Sexo = Listausuarios[i].Sexo;
-                    temp.nombre = Listausuarios[i].nombre;
-                    temp.email = Listausuarios[i].email;
-                    temp.status = Listausuarios[i].status;
-                    //asignamos el objeto catsexo adjunto al de persona
-                    Sexo catSexoTemp = new Sexo();
-                    catSexoTemp.idSexo = Listausuarios[i].Sexo.idSexo;
-                    catSexoTemp.Nombre  = Listausuarios[i].Sexo.Nombre;
-                    temp.Sexo = catSexoTemp;
+                    Entidades.Usuarios temp = new Entidades.Usuarios();
+                    temp.IdUsuario = Listausuarios[i].idUsuario;
+                    temp.Usuario1 = Listausuarios[i].usuario1;
+                    temp.Password = Listausuarios[i].password;
+                    temp.Fecha_nacimiento = (DateTime) Listausuarios[i].fecha_nacimiento;
+                    temp.Idsexo =(int) Listausuarios[i].idsexo;
+                    temp.Nombre = Listausuarios[i].nombre;
+                    temp.Email = Listausuarios[i].email;
+                    temp.Status =(bool) Listausuarios[i].status;
                     tempUS[i] = temp;
                 }
                 dcTemp.Dispose();
@@ -63,17 +58,29 @@ namespace Cynomex.cynomys.webservice
 
 
         [WebMethod]
-        public Usuario GetUsuario(int id)
+        public Entidades.Usuarios GetUsuario(int id)
         {
 
-            List<Usuario> Usuarios = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().ToList();
+            List<Usuario> Usuari = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().ToList();
 
-            Usuario Usuario = Usuarios.FirstOrDefault((p) => p.idUsuario == id);
-            if (Usuario == null)
+            Usuario usuario = Usuari.FirstOrDefault((p) => p.idUsuario == id);
+            if (usuario == null)
             {
                 return null;
             }
-            return Usuario;
+
+            Cynomex.cynomys.webservice.Entidades.Usuarios user = new Entidades.Usuarios();
+
+            user.IdUsuario = usuario.idUsuario;
+            user.Nombre = usuario.nombre;
+            user.Usuario1 = usuario.usuario1;
+            user.Password = usuario.password;
+            user.Fecha_nacimiento = (DateTime)usuario.fecha_nacimiento;
+            user.Email = usuario.email;
+            user.Idsexo = (int)usuario.idsexo;
+            user.Status = (bool)usuario.status;
+
+            return user;
         }
 
         [WebMethod]
@@ -102,14 +109,24 @@ namespace Cynomex.cynomys.webservice
         }
 
         [WebMethod]
-        public Usuario LoginUser(String Email, String Contraseña)
+        public Entidades.Usuarios LoginUser(String Email, String Contraseña)
         {
             try
             {
-                Usuario Usuario = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().Where(c => (c.email.Equals(Email.ToLower())) & (c.password.Equals(Contraseña))).First();
+                Usuario usuario = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Usuario>().Where(c => (c.email.Equals(Email.ToLower())) & (c.password.Equals(Contraseña))).First();
 
+                Cynomex.cynomys.webservice.Entidades.Usuarios user = new Entidades.Usuarios();
 
-                return Usuario;
+                user.IdUsuario = usuario.idUsuario;
+                user.Nombre = usuario.nombre;
+                user.Usuario1 = usuario.usuario1;
+                user.Password = usuario.password;
+                user.Fecha_nacimiento = (DateTime)usuario.fecha_nacimiento;
+                user.Email = usuario.email;
+                user.Idsexo =(int) usuario.idsexo;
+                user.Status =(bool) usuario.status;
+
+                return user;
 
             }catch(Exception ex)
             {

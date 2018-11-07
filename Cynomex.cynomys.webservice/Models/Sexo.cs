@@ -7,7 +7,7 @@ namespace Cynomex.cynomys.webservice.Models
 {
     public partial class Sexo
     {
-        public  string ToString()
+        public  string toString()
         {
             return Nombre;
         }
