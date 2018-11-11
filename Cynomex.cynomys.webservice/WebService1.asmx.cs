@@ -159,5 +159,41 @@ namespace Cynomex.cynomys.webservice
                 return false;
             }
         }
+
+        [WebMethod]
+        public Entidades.Alertas[] GetAllMarcas()
+        {
+            try
+            {
+                List<Alerta> ListaAlertas = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Alerta>().ToList();
+                Entidades.Alertas[] tempUS = new Entidades.Alertas[ListaAlertas.Count()];
+                for (int i = 0; i < ListaAlertas.Count(); i++)
+                {
+                    if ((bool)ListaAlertas[i].status)
+                    {
+                        //asignamos el objeto persona uno por uno
+                        Entidades.Alertas temp = new Entidades.Alertas();
+                        temp.IdUsuario = (int)ListaAlertas[i].idUsuario;
+                        temp.Lon = ListaAlertas[i].lon;
+                        temp.Lat = ListaAlertas[i].lat;
+                        temp.IdTipoAlerta = (int)ListaAlertas[i].idTipoAlerta;
+                        temp.IdAlerta = (int)ListaAlertas[i].idAlerta;
+                        temp.Registro = ListaAlertas[i].registro;
+                        temp.Status = (bool)ListaAlertas[i].status;
+                        tempUS[i] = temp;
+                    }
+                }
+                dcTemp.Dispose();
+
+                return tempUS;
+
+            }
+            catch (Exception _e)
+            {
+                return null;
+            }
+
+        }
+       
     }
 }
