@@ -147,8 +147,9 @@ namespace Cynomex.cynomys.webservice
                 ale.idTipoAlerta = idtipoalerta;
                 ale.idUsuario = idUsuario;
                 ale.status = true;
+                ale.registro = System.DateTime.Now;
 
-                dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Alerta>().InsertOnSubmit(usu);
+                dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Alerta>().InsertOnSubmit(ale);
                 dcTemp.SubmitChanges();
 
                 return true;
