@@ -136,5 +136,27 @@ namespace Cynomex.cynomys.webservice
 
         }
 
+        [WebMethod]
+        public bool registrarMarca(string latitud, string longitud, int idtipoalerta, int idUsuario)
+        {
+            try
+            {
+                Alerta ale = new Alerta();
+                ale.lat = latitud;
+                ale.lon = longitud;
+                ale.idTipoAlerta = idtipoalerta;
+                ale.idUsuario = idUsuario;
+                ale.status = true;
+
+                dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Alerta>().InsertOnSubmit(usu);
+                dcTemp.SubmitChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
