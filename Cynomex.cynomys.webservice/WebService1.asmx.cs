@@ -194,6 +194,92 @@ namespace Cynomex.cynomys.webservice
             }
 
         }
-       
+
+        [WebMethod]
+        public bool StatusServicio()
+        {
+            try
+            {
+                return true;
+
+            }
+            catch (Exception _e)
+            {
+                return false;
+            }
+
+        }
+
+        [WebMethod]
+        public bool registrarContacto(string nombre, string telefono, string email, int idUsuario)
+        {
+            try
+            {
+                    
+
+                ContactoEmergencia Con = new ContactoEmergencia();
+                Con.nombre = nombre;
+                Con.telefono = telefono;
+                Con.email = email;
+                Con.idUsuario = idUsuario;
+                Con.prioridad = 0;
+
+                dcTemp.GetTable<Cynomex.cynomys.webservice.Models.ContactoEmergencia>().InsertOnSubmit(Con);
+                dcTemp.SubmitChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+
+        [WebMethod]
+        public Entidades.ContactoEmergencia GetContacto(int idUsuario)
+        {
+
+            List<ContactoEmergencia> Contacto = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.ContactoEmergencia>().ToList();
+
+            ContactoEmergencia Cont1 = Contacto.FirstOrDefault((p) => p.idUsuario == idUsuario);
+            if (Cont1 == null)
+            {
+                return null;
+            }
+
+            Cynomex.cynomys.webservice.Entidades.ContactoEmergencia user = new Entidades.ContactoEmergencia();
+
+            user.IdUsuario = (int) Cont1.idUsuario;
+            user.Nombre = Cont1.nombre;
+            user.IdContactoEmergencia = Cont1.idContactoEmergencia;
+            user.Email = Cont1.email;
+            user.Prioridad = (int) Cont1.prioridad;
+            user.Telefono = Cont1.telefono;
+
+            return user;
+        }
+
+
+        [WebMethod]
+        public bool UpdateContacto(string nombre, string telefono, string email, int idContactoemergencia)
+        {
+
+            ContactoEmergencia Contacto = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.ContactoEmergencia>().Where(c => c.idContactoEmergencia == idContactoemergencia).FirstOrDefault();
+            
+            if (Contacto == null)
+            {
+                return false;
+            }
+            
+
+            Contacto.nombre = nombre;
+            Contacto.email = email;
+            Contacto.telefono = telefono;
+
+            dcTemp.SubmitChanges();
+            dcTemp.Dispose();
+            return true;
+        }
     }
 }
