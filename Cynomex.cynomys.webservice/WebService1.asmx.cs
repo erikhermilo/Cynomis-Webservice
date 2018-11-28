@@ -281,5 +281,32 @@ namespace Cynomex.cynomys.webservice
             dcTemp.Dispose();
             return true;
         }
+
+        [WebMethod]
+        public bool setDenuncia(int idAlerta, string strMensaje, int idUsuario)
+        {
+            try
+            {
+                Denuncia de = dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Denuncia>().Where(c => (c.idUsuario == idUsuario) && (c.idAlerta == idAlerta)).FirstOrDefault();
+
+                if (de != null) {
+                    return false;
+                }
+                Denuncia Den = new Denuncia();
+                Den.idAlerta = idAlerta;
+                Den.strMensaje = strMensaje;
+                Den.idUsuario = idUsuario;
+
+                dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Denuncia>().InsertOnSubmit(Den);
+                dcTemp.SubmitChanges();
+                dcTemp.Dispose();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
     }
 }
