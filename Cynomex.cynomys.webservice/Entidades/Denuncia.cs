@@ -11,6 +11,7 @@ namespace Cynomex.cynomys.webservice.Entidades
         int idAlerta;
         String strMensaje;
         int idUsuario;
+        bool Status;
 
         public int IdDenuncia
         {
@@ -61,6 +62,19 @@ namespace Cynomex.cynomys.webservice.Entidades
             set
             {
                 idUsuario = value;
+            }
+        }
+
+        public bool Status1
+        {
+            get
+            {
+                return Status;
+            }
+
+            set
+            {
+                Status = value;
             }
         }
     }

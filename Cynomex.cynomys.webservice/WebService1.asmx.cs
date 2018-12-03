@@ -126,7 +126,13 @@ namespace Cynomex.cynomys.webservice
                 user.Idsexo =(int) usuario.idsexo;
                 user.Status =(bool) usuario.status;
 
-                return user;
+                if (user.Status)
+                {
+                    return user;
+                }else
+                {
+                    return null;
+                }
 
             }
             catch (Exception ex)
@@ -152,6 +158,18 @@ namespace Cynomex.cynomys.webservice
                 dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Alerta>().InsertOnSubmit(ale);
                 dcTemp.SubmitChanges();
 
+                String Titulo = "Cynomys alerta";
+                TIpoAlerta t = dcTemp.GetTable<TIpoAlerta>().Where(c => c.idTipoAlerta == ale.idTipoAlerta).FirstOrDefault();
+                String Mensaje = "Nueva alerta de " + t.tipo;
+
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C java -cp CynomysFAM-1.0-SNAPSHOT.jar com.erik.cynomysfam.CynomysFAM Alerta \"" + Titulo + "\" \"" + Mensaje + "\"";
+                process.StartInfo = startInfo;
+                process.Start();
+                
                 return true;
             }
             catch (Exception e)
@@ -296,6 +314,7 @@ namespace Cynomex.cynomys.webservice
                 Den.idAlerta = idAlerta;
                 Den.strMensaje = strMensaje;
                 Den.idUsuario = idUsuario;
+                Den.Status = false;
 
                 dcTemp.GetTable<Cynomex.cynomys.webservice.Models.Denuncia>().InsertOnSubmit(Den);
                 dcTemp.SubmitChanges();
